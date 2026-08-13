@@ -1,3 +1,4 @@
+// Aravind T — 3D Portfolio Application
 import { lazy, Suspense } from "react";
 import "./App.css";
 
