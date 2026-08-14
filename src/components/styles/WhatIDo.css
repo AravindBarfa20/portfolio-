@@ -34,10 +34,11 @@
 }
 .what-box-in {
   flex-direction: column;
-  height: 500px;
+  height: 580px;
   margin-left: 200px;
   position: relative;
   display: none;
+  z-index: 10;
 }
 .what-content {
   width: 450px;
@@ -249,7 +250,7 @@
     margin-right: 20%;
   }
   .what-box-in {
-    height: 400px;
+    height: 480px;
   }
   .what-content h3 {
     font-size: 28px;
