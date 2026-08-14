@@ -32,38 +32,51 @@ const setCharacter = (
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
 
-                // === CYBERPUNK GLOW CHARACTER APPEARANCE ===
+                // === NEON ARCTIC CHARACTER — Bold, unmistakable restyling ===
                 if (mesh.material) {
                   const name = mesh.name || (mesh.parent as any)?.name || "";
 
                   if (name === "BODY.SHIRT") {
-                    // Dark shirt — near-black with subtle depth
+                    // Ice-white hoodie — high contrast against dark bg
                     const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    mat.color = new THREE.Color("#0B0F19");
+                    mat.color = new THREE.Color("#E2E8F0");
+                    mat.roughness = 0.6;
+                    mat.metalness = 0.05;
                     mesh.material = mat;
                   } else if (name === "CAP.001" || name === "CAP.002") {
-                    // Sky blue cap with subtle emissive glow
+                    // Neon cyan cap — strong visible glow
                     const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    mat.color = new THREE.Color("#38BDF8");
+                    mat.color = new THREE.Color("#0EA5E9");
                     mat.emissive = new THREE.Color("#38BDF8");
-                    mat.emissiveIntensity = 0.15;
+                    mat.emissiveIntensity = 0.6;
+                    mat.roughness = 0.3;
+                    mat.metalness = 0.2;
                     mesh.material = mat;
                   } else if (name === "Pant") {
-                    // Deep dark pants
+                    // Charcoal joggers — visible contrast with white shirt
                     const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    mat.color = new THREE.Color("#0F172A");
+                    mat.color = new THREE.Color("#334155");
+                    mat.roughness = 0.8;
                     mesh.material = mat;
                   } else if (name === "Shoe") {
-                    // Sky blue shoes with glow
+                    // Neon cyan kicks — bright accent
                     const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    mat.color = new THREE.Color("#38BDF8");
+                    mat.color = new THREE.Color("#0EA5E9");
                     mat.emissive = new THREE.Color("#38BDF8");
-                    mat.emissiveIntensity = 0.12;
+                    mat.emissiveIntensity = 0.45;
+                    mat.roughness = 0.25;
+                    mat.metalness = 0.3;
                     mesh.material = mat;
                   } else if (name === "Sole") {
-                    // Darker sole accent
+                    // White soles
                     const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    mat.color = new THREE.Color("#1E293B");
+                    mat.color = new THREE.Color("#CBD5E1");
+                    mesh.material = mat;
+                  } else if (name === "Hair") {
+                    // Dark navy hair
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#0F172A");
+                    mat.roughness = 0.9;
                     mesh.material = mat;
                   }
                 }
