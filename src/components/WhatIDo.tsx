@@ -123,19 +123,21 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>FULL-STACK & ML</h3>
-              <h4>Shipping AI in Production</h4>
+              <h3>APPLIED ML & INFRA</h3>
+              <h4>Training, Tuning & Serving AI</h4>
               <p>
-                FastAPI backends, React frontends, and ML models — containerized, deployed, and running. I go from prototype to live system with Docker, GitHub Actions, and cloud infra.
+                From fine-tuning transformer models to serving real-time inference via FastAPI backends and Docker containers — taking agentic pipelines from notebooks to production.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Python</div>
-                <div className="what-tags">FastAPI</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Docker</div>
                 <div className="what-tags">PyTorch</div>
                 <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">Scikit-learn</div>
+                <div className="what-tags">FastAPI</div>
+                <div className="what-tags">Docker</div>
+                <div className="what-tags">PostgreSQL</div>
+                <div className="what-tags">Redis</div>
               </div>
               <div className="what-arrow"></div>
             </div>
