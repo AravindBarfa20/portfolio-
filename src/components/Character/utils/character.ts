@@ -32,16 +32,39 @@ const setCharacter = (
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
 
-                // Change clothing colors to match site theme
+                // === CYBERPUNK GLOW CHARACTER APPEARANCE ===
                 if (mesh.material) {
-                  if (mesh.name === "BODY.SHIRT") { // The shirt mesh
-                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#1E293B");
-                    mesh.material = newMat;
-                  } else if (mesh.name === "Pant") {
-                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#0F172A");
-                    mesh.material = newMat;
+                  const name = mesh.name || (mesh.parent as any)?.name || "";
+
+                  if (name === "BODY.SHIRT") {
+                    // Dark shirt — near-black with subtle depth
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#0B0F19");
+                    mesh.material = mat;
+                  } else if (name === "CAP.001" || name === "CAP.002") {
+                    // Sky blue cap with subtle emissive glow
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#38BDF8");
+                    mat.emissive = new THREE.Color("#38BDF8");
+                    mat.emissiveIntensity = 0.15;
+                    mesh.material = mat;
+                  } else if (name === "Pant") {
+                    // Deep dark pants
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#0F172A");
+                    mesh.material = mat;
+                  } else if (name === "Shoe") {
+                    // Sky blue shoes with glow
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#38BDF8");
+                    mat.emissive = new THREE.Color("#38BDF8");
+                    mat.emissiveIntensity = 0.12;
+                    mesh.material = mat;
+                  } else if (name === "Sole") {
+                    // Darker sole accent
+                    const mat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    mat.color = new THREE.Color("#1E293B");
+                    mesh.material = mat;
                   }
                 }
 
